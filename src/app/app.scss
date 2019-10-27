@@ -1,0 +1,87 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.alert-wrapper{
+    background-color: rgba(200, 200, 200, 1) !important;
+    border-radius: 20px !important;
+    box-shadow: 10px 10px 10px black !important;
+    border-color: gray;
+    border-style: double;
+    border-width: 5px;
+}
+
+.toastPedido{
+    //background-color: rgba(131, 131, 131, 1) !important;
+    border-radius: 20px !important;
+    box-shadow: 10px 10px 10px black !important;
+    .button{
+        color: whitesmoke;
+        background-color: darkslategray;
+        border: cornsilk;
+    }
+}
+
+.alert-md .alert-message {
+    color:rgba(255, 255, 255, 0.76);
+    font-size: 25px;
+    text-shadow: 2px 2px 1px black;
+}
+
+.alert-md .alert-title {
+    text-shadow: 2px 2px 1px white;
+}
+
+.alert-md .alert-button {
+    color: black !important;
+}
+
+.alert-md .alert-radio-label {
+    font-size: 20px;
+}
+
+.toolbar-background-md {
+    border-color: #b2b2b2;
+    background: transparent;
+}
+
+.formItem {
+    background-color: rgba(0,0,0,0.5) !important; 
+    color: white; border-radius: 10px;
+}
+
+.menuButtonPPT {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+.ion-label {
+    margin: auto !important;
+}
+
+.label-md {
+    margin: auto !important;
+}
+
+.list-md .item-block .item-inner {
+    padding: 0% !important;
+}
+
+.item-md.item-block .item-inner {
+    padding: 0% !important;
+}
+

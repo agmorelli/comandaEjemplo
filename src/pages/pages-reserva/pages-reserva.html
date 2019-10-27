@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar class="productoNavBar">
+      <ion-title>Reserva / Alta</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="productoMenu">
+  <form [formGroup]="registroForm" (submit)="Registrar()">
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+          <ion-label>Fecha</ion-label>
+          <ion-datetime displayFormat="MMM DD YYYY"  [min]="hoy" name="fecha" [formControl]="fecha" required></ion-datetime>
+      </ion-item>
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+          <ion-label>Hora</ion-label>
+          <ion-datetime  displayFormat="h:mm A" pickerFormat="h mm A" name="hora" [formControl]="hora" required></ion-datetime>
+      </ion-item>
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+          <ion-label>Cantidad de comensales</ion-label>
+          <ion-input type="number" name="cant_comensales" [formControl]="cant_comensales" required></ion-input>
+      </ion-item>
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+          <ion-label>VIP</ion-label>
+          <ion-checkbox name="vip" [formControl]="vip"></ion-checkbox>
+      </ion-item>
+      <div padding>
+          <button type="submit" class="loginButton" large ion-button color="primary" [disabled]="!registroForm.valid" block>Reservar</button>
+      </div>
+  </form>
+</ion-content>

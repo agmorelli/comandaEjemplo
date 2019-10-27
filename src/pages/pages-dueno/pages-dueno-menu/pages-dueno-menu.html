@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar class="bartenderNavBar">
+    <ion-title>Dueño</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="bartenderMenu">
+  <button ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="Reservas()">Reservas</button>
+  <button ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="RegistrosUsuarios()">Registros pendientes</button>
+  <button ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="altas()">Altas</button>
+  <button ion-button expand="block"
+    class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated"
+    [disabled]="!encuestasCargadas" (click)="mostrarGrafico()">Grafico Encuesta Ing. Emp.</button>
+  <!-- Grafico-->
+  
+  <ion-card id="grafico" class="backgroundCard_graph">
+    <ion-card-header>
+      Promedio de calificaciones
+    </ion-card-header>
+    <ion-card-content>
+      <canvas height="500" #doughnutCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>

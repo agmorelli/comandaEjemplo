@@ -1,0 +1,22 @@
+<ion-grid class="estilo-grid">
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <ion-col style="text-align: center; margin:auto; background-color: darkgray;border-radius: 15px 0px 0px 0px;">
+      Producto</ion-col>
+    <ion-col style="text-align: center; margin:auto; background-color: darkgray;border-radius: 0px 15px 0px 0px;">
+      Cantidad</ion-col>
+  </ion-row>
+  <ion-row *ngFor="let producto of pedido.productos" class="ion-align-items-center ion-justify-content-center">
+    <ion-col style="text-align: center; margin:auto;">{{producto.nombre}}</ion-col>
+    <ion-col style="text-align: center; margin:auto;">{{producto.cantidad}}</ion-col>
+  </ion-row>
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <ion-col style="text-align: center; margin:auto; background-color: darkgray;">
+      Costo</ion-col>
+    <ion-col style="text-align: center; margin:auto; background-color: darkgray;">
+      Espera</ion-col>
+  </ion-row>
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <ion-col style="text-align: center; margin:auto;">{{pedido.costo}}$</ion-col>
+    <ion-col style="text-align: center; margin:auto;">{{pedido.tiempo_espera}} minuto/s</ion-col>
+  </ion-row>
+</ion-grid>

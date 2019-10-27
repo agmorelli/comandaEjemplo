@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar class="productoNavBar">
+    <ion-title>Producto - Alta</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="productoMenu">
+    <form>
+        <ion-item padding class="formItem">
+          <ion-input type="text" [(ngModel)]="producto.nombre" name="nombre" placeholder="Nombre"></ion-input>
+        </ion-item>
+        <ion-item padding class="formItem">
+          <ion-input type="text" [(ngModel)]="producto.descripcion" name="descripcion" placeholder="Descripción"></ion-input>
+        </ion-item>
+        <ion-item padding class="formItem">
+          <ion-select name="tipo" [(ngModel)]="producto.tipo" placeholder="Tipo">
+            <ion-option *ngIf="perfilActual === 'bartender'" value="bebida">Bebida</ion-option>
+            <ion-option *ngIf="perfilActual === 'cocinero'" value="comida">Postre</ion-option>
+            <ion-option *ngIf="perfilActual === 'cocinero'" value="comida">Comida</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item padding class="formItem">
+          <ion-input type="number" [(ngModel)]="producto.tiempo" name="tiempo" placeholder="Tiempo de elaboración (min)"></ion-input>
+        </ion-item>
+        <ion-item padding class="formItem">
+          <ion-input type="number" [(ngModel)]="producto.precio" name="precio" placeholder="Precio"></ion-input>
+        </ion-item>
+        <ion-item padding class="formItem">
+            <button ion-button default id="foto1" name="foto1" (click)="sacarFoto('foto1')" [disabled]="foto1Disabled">Foto 1</button>
+            <button ion-button default id="foto2" name="foto2" (click)="sacarFoto('foto2')" [disabled]="foto2Disabled">Foto 2</button>
+            <button ion-button default id="foto3" name="foto3" (click)="sacarFoto('foto3')" [disabled]="foto3Disabled">Foto 3</button>
+        </ion-item>
+        <ion-item padding class="formItem">
+          <ion-input type="text" [(ngModel)]="producto.foto1" id="foto1text" name="foto1text" placeholder="Foto 1" disabled></ion-input>
+        </ion-item>
+        <ion-item padding class="formItem">
+          <ion-input type="text" [(ngModel)]="producto.foto2" id="foto2text" name="foto2text" placeholder="Foto 2" disabled></ion-input>
+        </ion-item>
+        <ion-item padding class="formItem">
+          <ion-input type="text" [(ngModel)]="producto.foto3" id="foto3text" name="foto3text" placeholder="Foto 3" disabled></ion-input>
+        </ion-item>
+        <ion-item padding class="formItem">
+            <button ion-button block large (click)="cargarConQR()">Cargar con QR</button>
+        </ion-item>
+        <button ion-button type="submit" block large (click)="cargar()">Añadir producto</button>
+      </form>
+</ion-content>

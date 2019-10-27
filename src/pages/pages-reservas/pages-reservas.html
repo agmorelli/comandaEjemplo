@@ -1,0 +1,41 @@
+<!--
+  Generated template for the PagesReservasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="bartenderNavBar">
+    <ion-title>Reservas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bartenderMenu">
+
+  <ion-title> Lista de reservas </ion-title>
+  
+    <ion-list>
+      <div *ngFor="let reserva of lista_de_reservas" >
+        <ion-card *ngIf="reserva.estado=='pendiente'"  padding style="background-color: rgba(77, 76, 76, 0.589); color: white">
+        <!-- Cliente: {{ reserva.cliente.apellido }}-->
+              <br>
+           Fecha: {{ reserva.fecha }}
+           Hora: {{ reserva.hora }}
+              <br>
+             Mesa: {{ reserva.mesas }}
+              <br>
+              Estado: {{reserva.estado}}
+              <br>
+              
+              <button  ion-button style="background-color: green" (click)="AutorizarReserva(reserva)" >Autorizar</button>
+              <button  ion-button style="background-color:rgb(233, 53, 33)" (click)="CancelarReserva(reserva)">Cancelar</button>
+            
+            </ion-card>
+          </div>
+      </ion-list>
+
+
+</ion-content>

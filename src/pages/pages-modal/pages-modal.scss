@@ -1,0 +1,23 @@
+
+page-pages-modal {
+    .modal-content {
+        //background-color: rgba(0, 0, 0, 1)!important;
+        background: url('../assets/img/bg/1.jpg')!important;
+        height: 100%!important;
+        color: white!important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+        font-size: xx-large;
+        text-shadow: 2px 2px 2px black;
+    }
+    
+    ion-content {
+        height: 100%;
+        background-color: bisque;
+        background: slategray;
+    }
+    
+}
+
+

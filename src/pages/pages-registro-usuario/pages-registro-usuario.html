@@ -1,0 +1,66 @@
+
+
+<ion-header>
+
+  <ion-navbar class="bartenderNavBar">
+      <ion-title>Registro Usuario</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+
+<div class="contenidoLogin">
+<ion-content padding>
+  <h1 style="color: white">Registro</h1>
+
+  <form [formGroup]="registroForm" (submit)="Registrar()">
+    <ion-list>  
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">    
+        <ion-input type="text" style="color: white;" name="nombre" [formControl]="nombre" required placeholder="Nombre">
+        </ion-input>
+      </ion-item>
+
+        <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">    
+          <ion-input type="text" style="color: white;" name="apellido" [formControl]="apellido" required placeholder="Apellido">
+          </ion-input>
+          </ion-item>
+
+        <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">    
+          <ion-input type="number" style="color: white;" placeholder="DNI"name="dni"  [formControl]="dni" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">    
+          <ion-input type="email" style="color: white;" name="email" [formControl]="email" placeholder="Correo" required  >
+          </ion-input>
+        </ion-item>
+
+        <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">    
+          <ion-input type="password" style="color: white;" name="clave"  [formControl]="clave" placeholder="Clave" required>
+          </ion-input>
+        </ion-item>
+
+
+            <div padding>
+                <button [disabled]="!botonHabilitado" type="submit" class="loginButton" large ion-button color="primary" [disabled]="!registroForm.valid" block>Enviar</button>
+              </div>
+     
+    </ion-list>
+  </form>
+
+  
+  <div padding>
+    <button [disabled]="!botonHabilitado" class="loginButton" large ion-button color="primary" (click)="LeerDni()">Escaner dni</button>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+
+    <ion-fab bottom right>
+      <button ion-fab class="loginProfileButton" (click)="SacarFoto()" [disabled]="!registroForm.valid"><ion-icon name="camera"></ion-icon></button>
+    </ion-fab>  
+    
+  </ion-footer>
+</div>

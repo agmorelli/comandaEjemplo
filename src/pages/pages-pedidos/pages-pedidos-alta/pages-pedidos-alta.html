@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar class="cocineroNavBar" style="display: inline-flex;">
+    <button ion-button block (click)="pedir()"
+      style="border-radius: 20px; font-size: 15px; width: 80%; display:inline-block; background-color: darkgreen;">Pedir</button>
+    <button ion-button block (click)="miPedido()"
+      style="border-radius: 20px; font-size: 15px; width: 15%; display:inline-block;  background-color: darkorange;">
+      <ion-icon name="cart"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="cocineroMenu">
+  <ion-row class="backgroundCard">
+    <ion-searchbar placeholder="Que quiere comer?" autocomplete="on" animated="true" autocorrect="on"
+      [(ngModel)]="prodABuscar" (ionInput)="search()"></ion-searchbar>
+  </ion-row>
+  <ion-card class="backgroundCard" padding *ngFor="let producto of productosFiltrados">
+    <ion-item class="pedidos-title">
+      <ion-title>{{producto.nombre}}</ion-title>
+    </ion-item>
+    <ion-slides pager="true" effect="coverflow" zoom="true">
+
+      <ion-slide *ngIf="producto.foto1 === '' && producto.foto2 === '' && producto.foto3 === ''">
+        <div class="swiper-zoom-container">
+          <img class="imagen" src="../assets/img/noPhoto.png">
+        </div>
+      </ion-slide>
+
+      <ion-slide *ngIf="producto.foto1 !== ''">
+        <div class="swiper-zoom-container">
+          <img class="imagen" [src]="producto.foto1">
+        </div>
+      </ion-slide>
+      <ion-slide *ngIf="producto.foto2 !== ''">
+        <div class="swiper-zoom-container">
+          <img class="imagen" [src]="producto.foto2">
+        </div>
+      </ion-slide>
+      <ion-slide *ngIf="producto.foto3 !== ''">
+        <div class="swiper-zoom-container">
+          <img class="imagen" [src]="producto.foto3">
+        </div>
+      </ion-slide>
+    </ion-slides>
+    <br>
+    <ion-row class="pedidos-data">
+      <ion-col>
+        <button ion-button block small (click)="mostrarDetalles(producto.nombre)"
+          style="border-radius: 10px;">Detalles</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block small (click)="cargar(producto.nombre, producto.tipo)"
+          style="border-radius: 10px; background-color: darkgreen;">Agregar</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="pedidos-data" *ngIf="productosCargados[producto.nombre]">
+      <button ion-button block small (click)="sacar(producto.nombre)"
+        style="border-radius: 10px; background-color: darkred; margin: 2.5%;">Sacar</button>
+    </ion-row>
+    <ion-row class="pedidos-data" *ngIf="detallesProductos[producto.nombre]">
+      <p style="color: black; font-size: 15px; margin: auto; padding: 5%;">{{producto.descripcion}}</p>
+    </ion-row>
+    <ion-row class="pedidos-data" *ngIf="detallesProductos[producto.nombre]">
+      <ion-col>
+        <p style="color: black; font-size: 15px; margin: auto; padding: 5%;"><b>Precio:</b><br>{{producto.precio}}$</p>
+      </ion-col>
+      <ion-col>
+        <p style="color: black; font-size: 15px; margin: auto; padding: 5%;"><b>Tiempo:</b><br>{{producto.tiempo}}
+          minuto/s</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title> <button ion-button block small (click)="cargarConQR()" style="border-radius: 10px;">Cargar con
+        QR</button></ion-title>
+  </ion-toolbar>
+</ion-footer>

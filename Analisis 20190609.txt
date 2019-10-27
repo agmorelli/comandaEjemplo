@@ -1,0 +1,77 @@
+FUNCIONALIDAD PARA AMBOS PERFILES: REGISTRADO Y NO REGISTRADO.
+
+PROCESO:
+    -Ingresa cliente al restaurant
+        -Lista de espera.
+        -Solicita mesa
+        -Reserva
+
+-LISTA DE ESPERA
+    -MOZO INDICARA MESA (NO ES FUNCIONAL)
+        -USUARIO SCANEARA (REF: FUNCIONALIDADES/MESA)Y SE ASIGNARA MESA AUTOMATICAMENTE.
+            -EVENTO DEBERA QUITAR DE LA LISTA DE ESPERA.
+
+
+FUNCIONALIDADES
+    MESA:
+        -AL SCANEAR MESA ASIGNADA POR MOZO EL CLIENTE UTLIZARA LECTOR QR PARA TOMAR LA MISMA
+            -VALIDARA: 
+                -QUE LA MISMA NO SE ENCUENTRE RESERVADA PARA ESA FECHA. (EN RANGO DE HORARIO).
+                -QUE NO SE ENCUENTRE OCUPADA.
+            
+
+
+    USUARIO EN MESA ASIGNADA:
+        MOZO / USUARIO:
+            TOMAR PEDIDOS
+                -SE UTILIZA LA RELACION USUARIO/MESA.
+                -AL SELECCIONAR LOS PRODUCTOS QUE CONTIENEN EL PEDIDO, AL CONFIRMAR DEBERA MOSTRAR
+                 UN POP UP CON EL TIEMPO ESTIMADO (TIEMPO ESTIMADO POR TIPO DE PRODUCTO DE CADA UNO, NO IMPORTA LA CANTIDAD)
+
+            09/06: TOMADO DE DOCUMENTO CARGADO POR NEINER;
+                -EL MOZO DEBERA CONFIRMAR EL PEDIDO.
+
+
+    PEDIDOS:
+        ESTADOS DE LOS PEDIDOS:
+            -Solicitado <- Estado inicial al generar el pedido el mozo o el ciente.
+            -En proceso <- Cuando los empleados tomaron el pedido.
+            -Terminado  <- Los empleados marcaron el pedido como terminado.
+            -Entregado  <- El mozo entrego el pedido a la mesa, pendiente de confirmacion por usuario.
+            -Recibido   <- Cliente confirma recepcion de pedido.
+            -Pagado     <- Pedido cerrado y pagado. Cambia de estado de mesa a disponible
+        
+        
+        EMPLEADOS:
+            DEBERAN TENER EN EL MENU LOS PEDIDOS ASOCIADOS A SU CLASE.
+                -MARCARAN COMO TERMINADO LOS PEDIDOS.    
+       
+        ATRIBUTOS DE LOS PRODUCTOS:
+            id del producto.
+            nombre del producto.
+            cantidad en pedido.
+            precio (cantidad en pedido * precio en producto)
+
+        MOZOS:
+            Visualizaran los pedidos y los estados de los pedidos.
+            Si todos los productos de un pedido estan terminados el mozo contara con un boton de entregado.
+
+        USUARIO:
+            -El usuario vera el pedido en proceso.
+            -Si recibe el pedido debera confirmar la recepcion.
+        
+
+    JUEGOS:
+        LOS USUARIOS PODRAN JUGAR HASTA TANTO NO HAYAN PAGADO (MESA CERRADA).
+        
+
+        
+
+        
+
+
+            
+
+
+
+

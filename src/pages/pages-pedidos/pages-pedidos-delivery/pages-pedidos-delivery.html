@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar class="cocineroNavBar">
+    <ion-title style="text-align: center;">Seleccione su dirección</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="cocineroMenu">
+  <ion-row class="backgroundCard">
+    <ion-item padding class="formItem">
+      <ion-input (ionBlur)="validarDireccion()" id="pac-input" class="controls" type="text" placeholder="Direccion"
+        [(ngModel)]="pedido.direccion">
+      </ion-input>
+    </ion-item>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div id="map" #map></div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="pedidos-data">
+    <ion-col>
+      <p style="color: black; font-size: 15px; margin: auto; padding: 5%;"><b>Costo total del
+          pedido:</b><br><br>{{costo_total}}$</p>
+    </ion-col>
+    <ion-col>
+      <p style="color: black; font-size: 15px; margin: auto; padding: 5%;"><b>Tiempo total del
+          pedido:</b><br><br>{{tiempo_total}} minuto/s</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="pedidos-data">
+    <ion-col>
+      <p style="color: black; font-size: 15px; margin: auto; padding: 5%;"><b>Costo de
+          envío:</b><br><br>{{pedido.costo_envio}}$</p>
+    </ion-col>
+    <ion-col>
+      <p style="color: black; font-size: 15px; margin: auto; padding: 5%;"><b>Duracion
+          envío:</b><br><br>{{pedido.tiempo_envio}}
+        minuto/s</p>
+    </ion-col>
+  </ion-row>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      <ion-row>
+        <ion-col><button ion-button block small (click)="cancelar()"
+            style="border-radius: 10px; height: 2.0em; background-color: darkred; font-size: 20px;">Cancelar</button>
+        </ion-col>
+        <ion-col><button ion-button block small (click)="cargar()"
+            style="border-radius: 10px; height: 2.0em; background-color: darkgreen; font-size: 20px;">Cargar</button>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

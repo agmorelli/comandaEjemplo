@@ -1,0 +1,23 @@
+page-pages-encuesta-ingreso-empleado {
+    .range-md.range-has-pin {
+        padding: 0%;
+    }
+
+    ion-range {
+        display: block;
+    }
+
+    ion-label {
+        color: gray;
+    }
+
+    .select-md {
+        min-width: 100%;
+    }
+
+    .backgroundCard_graph{
+        background-color: rgba(255,255,255,0.5);
+        border-radius: 20px;
+        display: none;
+    }
+}

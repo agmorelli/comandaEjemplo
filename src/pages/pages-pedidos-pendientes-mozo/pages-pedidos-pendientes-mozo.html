@@ -1,0 +1,45 @@
+<!--
+  Generated template for the PagesPedidosPendientesMozoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="cocineroNavBar">
+    <ion-title>Pedidos para aceptar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="cocineroMenu">
+
+
+  <ion-title *ngIf="listaPedidos[0]">Lista de pedidos por aceptar</ion-title>
+  <ion-title *ngIf="!listaPedidos[0]">No hay pedidos pendientes</ion-title>
+
+  <ion-list>
+    <ion-card *ngFor="let pedido of listaPedidos" style="background-color: rgba(128, 128, 128, 0.247)">
+      <ion-card-header style="color: white">
+         Tipo: {{pedido.tipo}}
+         <br>
+        Cliente: {{pedido.cliente.nombre}}    
+      </ion-card-header>
+      <ion-card-content>
+        
+          <ion-list>
+            <ion-card style="background-color: rgba(128, 128, 128, 0.247); color: white" *ngFor="let prod of pedido.productos">
+              Producto: {{prod.nombre}}
+              Cantidad: {{prod.cantidad}}
+
+            </ion-card>
+          </ion-list>
+          <button ion-button full style="background-color: steelblue" (click)="AceptarPedido(pedido)">Aceptar</button>
+          <button ion-button full style="background-color: rgb(180, 70, 70)" (click)="CancelarPedido(pedido)">Cancelar</button>
+      </ion-card-content>
+     
+    </ion-card>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,29 @@
+
+ERROR DE DEPENDENCIAS:    
+	FUNCIONO -https://forum.ionicframework.com/t/android-build-falid-the-library-com-google-android-gms-play-services-measurement-base-is-being-requested-by-various-other-libraries/163390/2
+	
+	
+Tutorial nro. 1 = https://angularfirebase.com/lessons/ionic-native-with-firebase-fcm-push-notifications-ios-android/	
+
+1)ionic cordova platform rm android
+2)ionic cordova plugin add https://github.com/dpa99c/cordova-plugin-firebase#GH-1057-April-05-android-build-issue
+3)ionic cordova platform add android
+4)npm install --save @ionic-native/firebase@4
+5)Seguir pasos del tutorial nro. 1
+6)Descargar archivo google_service.json desde firebase.
+7)Colocar el archivo en raiz de proyecto (mismo lugar que package.json, readme, etc).
+Importante, el nombre del paquete que figura en firebase  tiene que ser igual que el id de la aplicacion que figura en config.xml. (esto se ve en el archivo google_service.json en el atributo: "package_name": "ionic.io.nombredelproyecto")
+8)Probar desde consola de Firebase enviar push manualmente.
+
+
+FIREBASE FUNCTIONS
+-npm install -g firebase-tools
+-firebase login
+
+
+
+
+
+
+
+	

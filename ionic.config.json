@@ -1,0 +1,7 @@
+{
+  "name": "2019_TP_PPS_Comanda",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,16 @@
+estado-pedido {
+    .pendiente{
+        font-size:1.6rem;
+        background-color:rgb(177, 52, 83)
+    }
+
+    .preparacion{     
+        font-size:1.6rem;
+        background-color:rgb(238, 171, 83);
+    }
+
+    .terminado{
+        font-size:1.6rem;
+        background-color:rgb(101, 199, 84);
+    }
+}

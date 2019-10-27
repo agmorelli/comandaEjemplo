@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar class="cocineroNavBar">
+    <ion-title>{{usuario.nombre}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="cocineroMenu">
+    <button [disabled]="ocupaMesa" ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="listaDeEspera()">Lista de espera</button>
+    <button ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="juegos()">Juegos</button>
+    <button [disabled]="!ocupaMesa || pedido" ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="hacerPedido()">Hacer pedido</button>
+    <solicitud-mesa [ocupaMesa]="ocupaMesa"></solicitud-mesa>
+    <button [disabled]="ocupaMesa" ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="OcuparMesa()">Ocupar Mesa con QR</button>
+    <!-- <button ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="estadoPedido()">Ver Pedido</button> -->
+    <!-- <listapedidos [pedidos]="pedidos"></listapedidos> -->
+    <estado-pedido *ngIf="pedido" [pedido]="pedido"></estado-pedido>
+  </ion-content>

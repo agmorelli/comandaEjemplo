@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar class="cocineroNavBar">
+    <ion-title>{{usuario.nombre}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="cocineroMenu">
+    <button ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="reserva()">Reservar mesa</button>
+    <button [disabled]="ocupaMesa || tieneChat" ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="listaDeEspera()">Lista de espera</button>
+    <button [disabled]="!ocupaMesa || pedido" ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="hacerPedido()">Hacer pedido</button>
+    <!-- <button ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated">Pagar</button> -->
+    <button ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="juegos()">Juegos</button>
+    <button [disabled]="tieneChat || ocupaMesa" ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="pedirDelivery()">Pedir delivery</button>
+    <solicitud-mesa [ocupaMesa]="ocupaMesa" [tieneChat]="tieneChat"></solicitud-mesa>
+    <button [disabled]="ocupaMesa || tieneChat" ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="OcuparMesa()">Ocupar Mesa con QR</button>
+    <button [disabled]="!tieneChat" ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="Chat()">Chat</button>
+    <button [disabled]="!pedido" ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="Encuesta()">Encuesta</button>
+   
+    
+    
+    <estado-pedido *ngIf="pedido" [pedido]="pedido"></estado-pedido>
+</ion-content>
+

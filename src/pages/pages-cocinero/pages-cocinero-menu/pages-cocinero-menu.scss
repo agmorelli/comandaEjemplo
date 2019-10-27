@@ -1,0 +1,18 @@
+.cocineroMenu {
+    position: absolute;
+    background: url('../assets/img/restaurantWallpaper.jpg') no-repeat transparent !important; //bg.png
+    background-size: cover !important;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    //background-repeat: repeat-x;
+    //animation: animatedBackground 3s linear infinite;
+    background-position: center;
+    margin-left: 0px;    
+}
+
+.cocineroNavBar{
+    background-color: gray;
+    border-radius: 50px;
+    text-shadow: 2px 2px 1px black;
+}

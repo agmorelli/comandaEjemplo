@@ -1,0 +1,73 @@
+
+ <!--
+<div id="fondo" class="base contenido">
+  <ion-header>
+    <ion-navbar hideBackButton >
+
+      <ion-buttons end>
+        <button ion-button icon-only (click)="volver()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="traerArchivoPost()">
+          <ion-icon name="refresh"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="traerUsuario()">
+          <ion-icon name="person"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="takePhoto()">
+          <ion-icon name="camera"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="addLibraryPhoto()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="mostrarGrafico()">
+          <ion-icon name="pie"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+
+  </ion-header>
+
+  <ion-content>
+
+    <ion-card class="backgroundCard" padding *ngFor="let item of cardItems">
+
+      <ion-item style="text-align: center; border-radius: 20px; background-color: rgba(255,255,255,0.8);">
+
+        <ion-title class="asd">{{item.user.name}}</ion-title><br>
+        <p style="color: black;">{{item.date | date:'medium'}}</p>
+      </ion-item>
+
+      <img class="imagen" [src]="item.image">
+
+      <br>
+
+      <ion-row>
+
+        <ion-row style="margin:auto;">
+
+          <button class="loginButton" ion-button color="primary" (click)='traerUsuario(item.id)' small icon-start>
+            Ver posts de {{item.user.name}}
+          </button>
+
+        </ion-row>
+
+        <ion-row style="margin:auto;">
+          
+          <button class="loginProfileButton" ion-button color="primary" (click)='votar(item)' small icon-start>
+            Votar!
+          </button>
+
+        </ion-row>
+        <br>
+        <ion-row center text-center style="margin:auto;">
+          <ion-note>
+          <br>
+            {{item.date | date:'medium'}}
+          </ion-note>
+        </ion-row>
+      </ion-row>
+    </ion-card>
+
+  </ion-content>
+-->

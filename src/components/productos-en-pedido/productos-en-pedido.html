@@ -1,0 +1,28 @@
+<!-- Generated template for the ProductosEnPedidoComponent component -->
+<div>
+  <ion-list>
+    <ion-card *ngFor="let producto of productosFiltrados; let i = index;" padding style="background-color: rgba(77, 76, 76, 0.589); color: white">         
+          Producto: {{producto.nombre}}
+          <br>
+          Cantidad: {{producto.cantidad}}
+          <br>
+          <ion-badge *ngIf="producto.estado == 'pendiente'" class="pendiente">Pendiente</ion-badge>
+          <ion-badge *ngIf="producto.estado == 'preparacion'" class="preparacion">En preparacion</ion-badge>
+          <ion-badge *ngIf="producto.estado == 'terminado'" class="terminado">Terminado</ion-badge>
+          
+          
+          <br>
+          <br>
+          <button  *ngIf="producto.estado == 'pendiente' && 
+                          producto.estado !== 'terminado'&&
+                          !esCliente" 
+                    
+                          ion-button style="background-color:rgb(233, 53, 33)" (click)="CambiarEstado(producto.id, 'preparacion')">Comenzar</button>
+          <button  *ngIf="producto.estado == 'preparacion' && 
+                          producto.estado !== 'terminado' &&
+                          !esCliente" 
+                          ion-button style="background-color:rgb(33, 233, 66)" (click)="CambiarEstado(producto.id, 'terminado')">Terminado</button>
+    </ion-card>
+  </ion-list>
+
+</div>

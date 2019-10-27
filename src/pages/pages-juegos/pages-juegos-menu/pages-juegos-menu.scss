@@ -1,0 +1,62 @@
+pages-juegos-menu{
+    .text-input[disabled] {
+        text-align: center;
+    }
+
+    .cardJuego{
+        background-color: rgba(255,255,255,0.5);
+        border-radius: 20px;
+    }
+
+    .resultado > .item-inner > .input-wrapper{
+        background-color: black;
+        border-radius: 10%;
+    }
+
+    H2{
+        color: #777777;
+    }
+     
+    .panel-juego{
+        margin-bottom: 25px;
+    }
+     
+    .palabra{
+     
+    }
+     
+    .letras{
+     
+    }
+     
+    .acierto{
+        color:#32db64!important;
+    }
+     
+    // Mensages TOAST
+    .toast-success{
+      > div{
+           background-color:#32db64!important;
+       }
+    }
+    .toast-danger{
+      > div{
+           background-color:#f53d3d!important;
+       }
+    }
+    .toast-warning{
+      > div{
+           background-color:#f2cd3c!important;
+       }
+    }
+     
+    #palabraSolucion{
+        text-transform: uppercase;
+    }
+
+
+
+
+
+
+}

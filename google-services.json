@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "273959203301",
+    "firebase_url": "https://practicaprofesional-dbd4e.firebaseio.com",
+    "project_id": "practicaprofesional-dbd4e",
+    "storage_bucket": "practicaprofesional-dbd4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273959203301:android:f3f0263d318e9d80",
+        "android_client_info": {
+          "package_name": "ionic.io.TPPPSComanda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273959203301-paqj1l8r3c3lnvbu5kesldhg0gn24rcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2tx_wxUViZD7vTBFRy6tA6Wa9TdQbO8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273959203301-paqj1l8r3c3lnvbu5kesldhg0gn24rcr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273959203301:android:f14a01fc96fb5661",
+        "android_client_info": {
+          "package_name": "org.apache.cordova"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273959203301-lb3aa1bslp7e4n0fjbqrrg015sf9e4kt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.apache.cordova",
+            "certificate_hash": "aac1d59f94f994866856997ea834418bc501f1da"
+          }
+        },
+        {
+          "client_id": "273959203301-paqj1l8r3c3lnvbu5kesldhg0gn24rcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2tx_wxUViZD7vTBFRy6tA6Wa9TdQbO8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273959203301-paqj1l8r3c3lnvbu5kesldhg0gn24rcr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

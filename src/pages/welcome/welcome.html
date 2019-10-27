@@ -1,0 +1,40 @@
+<!-- Splashscreen animado -->
+
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <!--<img src="assets/logo.svg">-->
+    <ion-col>
+        <ion-row>
+          <div class="content">
+            <div class="splash-logo"></div>
+          </div>
+        </ion-row>
+      <br>
+        <ion-row style="margin:auto; padding: 10%">
+          <div style="display: block;margin: 0 auto;">
+            <h1 ion-text class="welcomeTitle">Alumnos:</h1> <p class="subtitle">Nicolás Saavedra, Damian Vogel, Augusto Morelli</p>
+            <h1 ion-text class="welcomeTitle">División:</h1> <p class="subtitle">4ºB</p>
+            <h1 ion-text class="welcomeTitle">Aplicación:</h1> <p class="subtitle">Segundo Parcial - Comanda</p>
+          </div>
+        </ion-row>
+      </ion-col>
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+<!-- Splashscreen animado -->
+
+<ion-content scroll="false" class="appBody">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      Segundo Parcial - Comanda
+    </div>
+  </div>
+  <div padding>
+    <!-- <button ion-button block (click)="signup()">{{ 'SIGNUP' | translate }}</button> -->
+    <button ion-button round (click)="login()" class="login">{{ 'WELCOME_BUTTON' | translate }}</button>
+  </div>
+</ion-content>

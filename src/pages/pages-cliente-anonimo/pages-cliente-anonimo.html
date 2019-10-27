@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar class="cocineroNavBar">
+    <ion-title>{{usuario.nombre}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="cocineroMenu">
+  <form>
+    <ion-item padding class="formItem">
+      <ion-input type="text" [(ngModel)]="usuario.nombre" name="nombre" placeholder="Nombre"></ion-input>
+    </ion-item>
+    <button [disabled]="!botonHabilitado" class="menuButtonPPT" ion-button type="submit" block large (click)="acceder()">Acceder</button>
+  </form>
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar class="bartenderNavBar">
+    <ion-title>Descarga/carga masiva</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bartenderMenu">
+  <div padding style="background-color: rgba(0,0,0,0.5); border-radius: 20px;">
+    <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="json" style="font-size: 25px; color: white;">
+        JSON
+      </ion-segment-button>
+      <ion-segment-button value="excel" style="font-size: 25px; color: white;">
+        excel
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'excel'">
+      <ion-item style="padding: 0px; background: transparent; padding: 20% 0% 10% 0%;">
+        <button ion-button expand="block"
+          class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated"
+          (click)="cargaCSV()">Carga Excel</button>
+      </ion-item>
+      <ion-item style="padding: 0px; background: transparent; padding: 10% 0% 20% 0%;">
+        <button ion-button expand="block"
+          class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated"
+          (click)="descargaCSV()">Descarga Excel</button>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'json'">
+      <ion-item style="padding: 0px; background: transparent; padding: 20% 0% 10% 0%;">
+        <button ion-button expand="block"
+          class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated"
+          (click)="cargaJSON()">Carga JSON</button>
+      </ion-item>
+      <ion-item style="padding: 0px; background: transparent; padding: 10% 0% 20% 0%;">
+        <button ion-button expand="block"
+          class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated"
+          (click)="descargaJSON()">Descarga JSON</button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

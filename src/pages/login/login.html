@@ -1,0 +1,52 @@
+<div class="contenidoLogin">
+  <ion-content>
+
+    <div class="splash-logo"></div>
+
+    <form (submit)="doLogin()">
+      <ion-list>
+        <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+          <ion-label class="titulo" style="color: white; font-size: 25px; text-align: center; padding: 0px 15px;">
+            <ion-icon name="mail"></ion-icon>
+          </ion-label>
+          <ion-input class="titulo" type="email" style="color: white;" [(ngModel)]="loginFields.email" name="email">
+          </ion-input>
+        </ion-item>
+
+        <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+          <ion-label class="titulo" style="color: white; font-size: 25px; text-align: center; padding: 0px 15px;">
+            <ion-icon name="key"></ion-icon>
+          </ion-label>
+          <ion-input class="titulo" style="color: white;" type="password" [(ngModel)]="loginFields.clave" name="clave">
+          </ion-input>
+        </ion-item>
+        <div>
+          <button padding class="loginButton" large ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
+        </div>
+      </ion-list>
+    </form>
+    <ion-row>
+      <ion-col><button class="loginButton" large ion-button color="primary" block (click)="ingresoAnonimo()">Ingreso<br>
+          anónimo</button></ion-col>
+      <ion-col><button class="loginButton" large ion-button color="primary" block
+          (click)="irARegistro()">Registrarme</button></ion-col>
+    </ion-row>
+
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>
+        <ion-row>
+          <ion-col>
+            <button ion-button block small class="loginProfileButton" (click)="login()"
+              style="border-radius: 10px; height: 2.0em; background-color: darkgreen; font-size: 20px;">
+              <ion-icon name="people"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
+
+</div>

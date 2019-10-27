@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar class="cocineroNavBar">
+    <ion-title>mozo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="cocineroMenu">
+
+  <button ion-button full (click)="ListaEspera()">Lista de espera</button>
+
+  <button ion-button full (click)="PedidosPendientes()">Pedidos pendientes</button>
+
+  <ion-list>
+
+    <ion-card *ngFor="let mesa of listaMesas" style="background-color: rgba(66, 65, 65, 0.692)">
+      <ion-card-header>
+        <ion-title> Mesa: {{mesa.numero}}</ion-title>
+         
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngIf="mesa.estado=='disponible'" style="color: rgb(59, 250, 59)">Estado: {{mesa.estado}}</div>
+        <div *ngIf="mesa.estado=='ocupada'" style="color: rgb(248, 199, 36)">Estado: {{mesa.estado}}</div>
+          
+          <div *ngIf="mesa.estado=='ocupada'"><button ion-button style="background-color: rgb(41, 187, 41)" (click)="Opciones(mesa)" full >Ingresar</button></div>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
+
+</ion-content>

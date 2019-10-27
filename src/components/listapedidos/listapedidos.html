@@ -1,0 +1,24 @@
+<!-- Generated template for the ListapedidosComponent component -->
+<ion-list>
+  <ion-card *ngFor="let pedido of pedidos" padding style="background-color: rgba(77, 76, 76, 0.589); color: white">
+
+       
+        <span *ngIf="!filtroDelivery"> Nro.: {{ pedido.mesa }} </span>
+        <span *ngIf="filtroDelivery">Pedido de {{pedido.cliente.nombre}}</span>
+        <br>
+        <span *ngIf="filtroDelivery">Direccion: {{pedido.direccion}}</span>        
+        <br>
+        <!-- El estado del pedido es: {{pedido.estado}}
+        <br> -->
+        <productos-en-pedido *ngIf="!filtroDelivery"
+          [pedido]='pedido'
+        ></productos-en-pedido>
+        <br>
+        <br>
+        <button *ngIf="filtroDelivery && pedido.estado == 'terminado'" ion-button style="background-color: green" (click)="RetirarEntrega(pedido)" >Retirar para entrega</button>
+        <br>
+        <button *ngIf="filtroDelivery && pedido.estado == 'en_camino'" ion-button style="background-color:rgb(233, 53, 33)" (click)="Entregar(pedido)">Entregar</button>
+        <br>
+        <button *ngIf="filtroDelivery && pedido.estado == 'recibido'" ion-button style="background-color:rgb(233, 53, 33)" (click)="Cobrar(pedido)">Cobrar</button>  
+  </ion-card>
+</ion-list>

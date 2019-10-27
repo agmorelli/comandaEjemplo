@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-navbar class="cocineroNavBar">
+    <ion-title>Juegos</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="cocineroMenu">
+  <button ion-button expand="block"
+    class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated"
+    (click)="juegoDescuento()">Aritmetica: Resuelve y Gana!</button>
+  <button ion-button expand="block"
+    class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated"
+    (click)="Ahorcado()">Ahorcado Clasico</button>
+  <!-- <button ion-button expand="block"
+    class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated"
+    (click)="postre()">Postre gratis</button> -->
+  
+  <ion-card *ngIf="juegoDescuendoMostrado" class="cardJuego">
+    <ion-card-header>
+      Juego 10% de descuento
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item padding class="formItem">
+        <ion-input type="number" [(ngModel)]="descuentoJuego.primerValor" disabled></ion-input>
+      </ion-item>
+      <ion-item padding class="formItem">
+        <ion-input type="text" [(ngModel)]="descuentoJuego.calculo" disabled></ion-input>
+      </ion-item>
+      <ion-item padding class="formItem">
+        <ion-input type="number" [(ngModel)]="descuentoJuego.segundoValor" disabled></ion-input>
+      </ion-item>
+      <ion-item padding class="formItem resultado">
+        <ion-input type="number" [(ngModel)]="resultado"></ion-input>
+      </ion-item>
+      <button ion-button block large (click)="verificarResultado()">Calcular</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card  *ngIf="juegoAhorcadoMostrado"class="panel-juego">
+    <ion-card-header text-center>
+        PANEL DE JUEGO
+    </ion-card-header>
+
+
+<!-- Sección imagen + vidas + puntos -->
+<ion-row>
+    <ion-col col-4 ><img src="/assets/img/appicon.png" width='50%' /></ion-col>
+    <ion-col col-8 >
+        <ion-row>
+            <ion-col col-3 text-center><H5><ion-icon name="heart" color="danger"></ion-icon></H5></ion-col>
+            <ion-col col-6><H5>Vidas:</H5></ion-col>
+            <ion-col col-3 text-center><H5>{{vidas}}</H5></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-3 text-center><H5><ion-icon name="calculator" color="primary"></ion-icon></H5></ion-col>
+            <ion-col col-6><H5>Puntos:</H5></ion-col>
+            <ion-col col-3 text-center><H5>{{puntos}}</H5></ion-col>
+        </ion-row>
+    </ion-col>    
+</ion-row>
+
+<!-- Sección huecos de palabra -->
+<ion-list >
+
+    <!-- Mensajes de la aplicación -->
+    <ion-label text-center>{{mensaje}}</ion-label>
+
+    <ion-grid>
+        <ion-row *ngIf="ganador!=1">
+            <ion-col class="palabra" col-1 *ngFor="let item of palabra">
+                {{item}}
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="ganador==1">
+            <ion-col class="acierto">
+                La palabra secreta es: {{nombreSecreto}}
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-item>
+        <!-- Selector que nos permitirá elegir una letra -->
+        <ion-label text-center>Seleccione una letra</ion-label>
+        <ion-select [(ngModel)]="letra">
+            <ion-option value="A">A</ion-option>
+            <ion-option value="B">B</ion-option>
+            <ion-option value="C">C</ion-option>
+            <ion-option value="D">D</ion-option>
+            <ion-option value="E">E</ion-option>
+            <ion-option value="F">F</ion-option>
+            <ion-option value="G">G</ion-option>
+            <ion-option value="H">H</ion-option>
+            <ion-option value="I">I</ion-option>
+            <ion-option value="J">J</ion-option>
+            <ion-option value="K">K</ion-option>
+            <ion-option value="L">L</ion-option>
+            <ion-option value="M">M</ion-option>
+            <ion-option value="N">N</ion-option>
+            <ion-option value="Ñ">Ñ</ion-option>
+            <ion-option value="O">O</ion-option>
+            <ion-option value="P">P</ion-option>
+            <ion-option value="Q">Q</ion-option>
+            <ion-option value="R">R</ion-option>
+            <ion-option value="S">S</ion-option>
+            <ion-option value="T">T</ion-option>
+            <ion-option value="U">U</ion-option>
+            <ion-option value="V">V</ion-option>
+            <ion-option value="W">W</ion-option>
+            <ion-option value="X">X</ion-option>
+            <ion-option value="Y">Y</ion-option>
+            <ion-option value="Z">Z</ion-option>
+        </ion-select>
+    </ion-item>
+</ion-list>
+
+
+<ion-row>
+    <!-- Listado de letras utilizadas -->
+    <ion-label text-center>Listado de letras utilizadas</ion-label>
+    <ion-col col-12 text-center><H6>{{letras_utilizadas}}</H6></ion-col>
+</ion-row>
+
+
+<!-- En caso de no tener vidas, mostramos un botón para reiniciar el juego -->
+<ion-row *ngIf="vidas!=0 && ganador!=1">
+    <ion-col col-4>
+        <!-- Si continuamos teniendo vidas, mostramos el botón para seleccionar letra  -->
+        <button ion-button block color="primary" (click)="confirmarResolver()">Resolver</button></ion-col>
+    <ion-col col-8>
+        <!-- Si continuamos teniendo vidas, mostramos el botón para seleccionar letra  -->
+        <button ion-button block color="secondary" (click)="compruebaLetra()">Seleccionar letra</button>
+    </ion-col>
+</ion-row>
+
+<button *ngIf="vidas==0 || ganador==1" ion-button block (click)="reiniciaJuego()">Jugar de nuevo</button>
+
+</ion-card>
+
+</ion-content>

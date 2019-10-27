@@ -1,0 +1,50 @@
+
+//LA INFO LA TOME DE ACA CON VARIAS MODIFICACIONES.
+Tutorial nro. 1 = https://angularfirebase.com/lessons/ionic-native-with-firebase-fcm-push-notifications-ios-android/	
+
+
+
+PASOS DE INSTALACION:
+
+1)	ionic cordova platform rm android
+2)	ionic cordova plugin add https://github.com/dpa99c/cordova-plugin-firebase#GH-1057-April-05-android-build-issue
+3)	ionic cordova platform add android
+4)	npm install --save @ionic-native/firebase@4
+
+
+FUNCIONES DE FIREBASE.
+
+FIREBASE FUNCTIONS
+5)	npm install -g firebase-tools
+6)  npm install firebase-functions@latest 
+7)  npm install firebase-admin@latest --save
+
+
+8)  Dentro del directorio functions ejecutar: 
+    -   npm install cors --save
+
+
+//NO SE SI ES NECESARIO, PUEDE SER QUE SI NO REALIZAN ESTO NO LES DEJE SUBIR/ACTUALIZAR LAS FUNCIONES.
+8)  firebase login
+9)  firebase init functions
+
+
+
+//EN CASO QUE AGREGUEN NUEVAS FUNCIONES A FIREBASE Y DEBAN SUBIRLAS.
+10) firebase deploy --only functions
+
+
+
+ANOMALIA TYPESCRIPT: "Exclude"
+https://github.com/DefinitelyTyped/DefinitelyTyped/issues/33778
+
+12/06:
+    npm i -D @types/lodash@ts2.5 <- Correccion.
+    
+
+
+
+
+
+
+	

@@ -1,0 +1,36 @@
+
+<ion-card padding style="background-color: rgba(77, 76, 76, 0.589); color: white">
+  <span *ngIf="pedido.tipo == 'restaurant' && pedido.estado !== 'pagado'" >Mesa Nro.: {{ pedido.mesa }}</span><br><br> 
+  
+  <span *ngIf="pedido.estado !== 'pagado'"> Gracias por su pedido! </span><br><br> 
+  
+  <span *ngIf="pedido.estado !== 'recibido' && pedido.estado !== 'solicita_cuenta' && pedido.estado !== 'pagado'  ">Estado:</span>
+    <ion-badge *ngIf="pedido.estado == 'solicitado'" class="pendiente">A CONFIRMAR</ion-badge>
+    <ion-badge *ngIf="pedido.estado == 'pendiente'" class="pendiente">PEDIDO CONFIRMADO</ion-badge>  
+    <ion-badge *ngIf="pedido.estado == 'proceso'" class="preparacion">LO ESTAMOS PREPARANDO</ion-badge>
+    <ion-badge *ngIf="pedido.estado == 'terminado' && pedido.tipo == 'restaurant'" class="terminado">YA CASI LO TENES</ion-badge>
+    <ion-badge *ngIf="pedido.estado == 'terminado' && pedido.tipo == 'delivery'" class="terminado">A PUNTO DE PARTIR</ion-badge>
+    <!-- Delivery -->
+    <ion-badge *ngIf="pedido.estado == 'en_camino'" class="terminado">EN CAMINO!</ion-badge>
+    <ion-badge *ngIf="pedido.estado == 'entregado' && pedido.tipo == 'delivery'" class="terminado">¿LO RECIBISTE?</ion-badge>  
+
+
+    <ion-badge *ngIf="pedido.estado == 'entregado'&& pedido.tipo == 'restaurant'" class="terminado">BUEN PROVECHO</ion-badge>
+    <ion-badge *ngIf="pedido.estado == 'solicita_cuenta'" class="terminado">LA CUENTA ESTA EN CAMINO</ion-badge>
+    <ion-badge *ngIf="pedido.estado == 'pagado'" class="terminado">MUCHAS GRACIAS!</ion-badge>
+
+  <br><br> 
+   <!-- <productos-en-pedido 
+     [pedido]='pedido'
+   ></productos-en-pedido> -->
+          
+  <button  *ngIf="pedido.estado == 'entregado'" ion-button style="background-color: green" (click)="ConfirmarEntrega()">Recibido</button>
+  <br>
+  <button *ngIf="(pedido.estado == 'recibido' || pedido.estado == 'solicita_cuenta')  && pedido.estado !== 'pagado' && pedido.propina == 0" ion-button style="background-color: green" (click)="IndicarPropina()">Grado de Satisfacción</button> 
+  <br>
+  <button *ngIf="pedido.tipo == 'restaurant' && pedido.estado == 'recibido' && pedido.estado !== 'solicita_cuenta'" ion-button style="background-color: green" (click)="SolicitarCuenta()">Solicitar La Cuenta</button> 
+   
+
+
+
+</ion-card>

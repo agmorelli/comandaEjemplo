@@ -1,0 +1,37 @@
+.item-md.item-block .item-inner {
+    border-bottom: none;
+}
+
+.listaEsperaList{
+    border-radius: 20px;
+    background-color: transparent;
+    border-bottom: none;
+}
+
+.listaEsperaItem{
+    padding-left: 0%;
+}
+    
+.listaEsperaNombre{
+    border-radius: 20px;
+    background: rgb(38,38,38);
+    background: linear-gradient(90deg, rgba(38,38,38,1) 0%, rgba(142,142,142,1) 50%, rgba(255,255,255,1) 100%);
+    text-align: center;
+    padding: 2.5%;
+    border-bottom: none;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 6px 2px rgba(0, 0, 0, 0.9);
+    margin: 3% 0%;
+}
+
+.listaEsperaIndice{
+    border-radius: 20px;
+    background: rgb(38,38,38);
+    color: white;
+    text-align: center;
+    padding: 2.5%;
+    border-bottom: none;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 6px 2px rgba(0, 0, 0, 0.9);
+    margin: 3% 0%;
+}

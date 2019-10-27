@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar class="productoNavBar">
+    <ion-title>Empleado - Alta</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="productoMenu">
+  <form [formGroup]="registroFormEmpleado" (submit)="AltaEmpleado()">
+    <ion-list>
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+        <ion-label class="titulo" style="color: white;" fixed>Nombre</ion-label>
+        <ion-input class="titulo" type="text" style="color: white;" [formControl]="nombre" required name="nombre">
+        </ion-input>
+      </ion-item>
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+        <ion-label class="titulo" style="color: white;" fixed>Apellido</ion-label>
+        <ion-input class="titulo" style="color: white;" type="text" [formControl]="apellido" required name="apellido">
+        </ion-input>
+      </ion-item>
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+        <ion-label class="titulo" style="color: white;" fixed>Clave</ion-label>
+        <ion-input class="titulo" style="color: white;" type="password" [formControl]="clave" name="clave"></ion-input>
+      </ion-item>
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+        <ion-label class="titulo" style="color: white;" fixed>Email</ion-label>
+        <ion-input class="titulo" style="color: white;" type="email" [formControl]="email" name="email"></ion-input>
+      </ion-item>
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+        <ion-label class="titulo" style="color: white;" fixed>DNI</ion-label>
+        <ion-input class="titulo" style="color: white;" type="number" [formControl]="dni" required name="dni">
+        </ion-input>
+      </ion-item>
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+        <ion-label class="titulo" style="color: white;" fixed>CUIL</ion-label>
+        <ion-input class="titulo" style="color: white;" type="number" [formControl]="cuil" name="cuil"></ion-input>
+      </ion-item>
+      <ion-item padding style="background-color: rgba(0,0,0,0.7) !important; color: white; border-radius: 10px;">
+        <ion-label class="titulo" style="color: white;" fixed>Tipo</ion-label>
+        <ion-select class="titulo" style="color: white;" name="tipo" [formControl]="tipo" placeholder="Seleccionar">
+          <ion-option value="mozo">Mozo</ion-option>
+          <ion-option value="cocinero">Cocinero</ion-option>
+          <ion-option value="bartender">Bartender</ion-option>
+          <ion-option value="delivery">Delivery</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item padding class="formItem">
+        <button type="button" ion-button block large (click)="LeerDni()">Escanear DNI</button>
+      </ion-item>
+      <div padding>
+        <button type="submit" class="loginButton" large ion-button color="primary" [disabled]="!registroFormEmpleado.valid" block>Registrar</button>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-fab bottom right>
+    <button ion-fab class="loginProfileButton" (click)="SacarFoto()" [disabled]="!registroFormEmpleado.valid">
+      <ion-icon name="camera"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-footer>

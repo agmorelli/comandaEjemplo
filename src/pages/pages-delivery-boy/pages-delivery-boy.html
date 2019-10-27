@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar class="cocineroNavBar">
+    <ion-title>Delivery</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="cocineroMenu">
+  
+    <button ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="CargarPedidosPendientes()">Ver Pedidos</button>
+    <button ion-button expand="block" class="menuButtonPPT ios button button-block button-solid ion-activatable ion-focusable hydrated" (click)="Chat()">Chat</button> 
+    
+    <listapedidos [pedidos]="pedidos"></listapedidos>
+     
+</ion-content>

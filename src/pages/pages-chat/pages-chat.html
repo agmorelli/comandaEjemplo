@@ -1,0 +1,37 @@
+<!--
+  Generated template for the PagesChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="cocineroNavBar">
+    <ion-title>chat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="cocineroMenu">
+<ion-list *ngFor="let mensaje of listaMensajes">
+    <ion-item *ngIf="mensaje.usuario.tipo=='delivery'" style="background-color: rgba(246, 250, 14, 0.685)">
+        <p style="color: white">{{mensaje.usuario.nombre}} dice:</p> 
+        <p style="color: black">{{mensaje.mensaje}}</p> 
+        <p style="color: gray">{{mensaje.fecha}}</p> 
+       </ion-item>
+
+    <ion-item *ngIf="mensaje.usuario.tipo=='cliente'" style="background-color: rgba(0, 128, 128, 0.37)">
+     <p style="color: gray">{{mensaje.usuario.nombre}} dice:</p> 
+      <p style="color: white">{{mensaje.mensaje}}</p>
+      <p style="color: gray">{{mensaje.fecha}}</p> 
+    </ion-item>
+</ion-list>
+  
+
+
+</ion-content>
+<ion-footer>
+  <ion-input type="text" placeholder="Mensaje" style="background-color: rgba(0, 0, 0, 0.678); color: white" [(ngModel)]="mensaje" ></ion-input>
+  <button [disabled]="!mensaje" ion-button full large style="background-color: springgreen" (click)="GuardarMensaje()">Enviar</button>
+</ion-footer>
